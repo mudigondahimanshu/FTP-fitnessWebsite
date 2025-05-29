@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="Home.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="home.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../logo.png">
+
+    <style>
+      @keyframes slideInLeft {
+        from { opacity: 0; transform: translateX(-80px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+    
+      @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(80px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+
+    
+      .nutrition-section {
+    padding: 80px 5%;
+    background-color: #011b1b;
+  }
+
+  .nutrition-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #012b2b;
+    border: 1px solid #00f57a;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 245, 122, 0.2);
+    padding: 30px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-in-out;
+  }
+
+  .nutrition-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nutrition-content {
+    flex: 1;
+    color: #e0e0e0;
+    padding-right: 30px;
+  }
+
+  .nutrition-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f57a;
+    text-shadow: 0 0 6px #00f57a;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .nutrition-content p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .nutrition-image img {
+    max-width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 245, 122, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .nutrition-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .nutrition-content {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .nutrition-image img {
+      max-width: 100%;
+    }
+  }
+
+
+  .workout-section {
+  padding: 80px 5%;
+  background-color: #011b1b;
+}
+
+.workout-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #012b2b;
+  border: 1px solid #00f57a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 245, 122, 0.2);
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-in-out;
+}
+
+.workout-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.workout-content {
+  flex: 1;
+  color: #e0e0e0;
+  padding-right: 20px;
+}
+
+.workout-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f57a;
+  text-shadow: 0 0 6px #00f57a;
+  margin-bottom: 10px;
+}
+
+.workout-content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.workout-image {
+  flex-shrink: 0;
+}
+
+.workout-image img {
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 245, 122, 0.3);
+}
+
+@media (max-width: 768px) {
+  .workout-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .workout-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .workout-image img {
+    max-width: 100%;
+  }
+}
+
+
+
+.calendar-section {
+    padding: 80px 5%;
+    background-color: #011b1b;
+  }
+
+  .calendar-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #012b2b;
+    border: 1px solid #00f57a;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 245, 122, 0.2);
+    padding: 30px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-in-out;
+  }
+
+  .calendar-card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .calendar-content {
+    flex: 1;
+    color: #e0e0e0;
+    padding-right: 20px;
+  }
+
+  .calendar-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f57a;
+    text-shadow: 0 0 6px #00f57a;
+    margin-bottom: 10px;
+  }
+
+  .calendar-content p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .calendar-image {
+    flex-shrink: 0;
+  }
+
+  .calendar-image img {
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 245, 122, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .calendar-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .calendar-content {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .calendar-image img {
+      max-width: 100%;
+    }
+  }
+
+  .todo-section {
+  padding: 80px 5%;
+  background-color: #011b1b;
+}
+
+.todo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #012b2b;
+  border: 1px solid #00f57a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 245, 122, 0.2);
+  padding: 30px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-in-out;
+}
+
+.todo-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.todo-content {
+  flex: 1;
+  color: #e0e0e0;
+  padding-right: 20px;
+}
+
+.todo-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f57a;
+  text-shadow: 0 0 6px #00f57a;
+  margin-bottom: 10px;
+}
+
+.todo-content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.todo-image {
+  flex-shrink: 0;
+}
+
+.todo-image img {
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 245, 122, 0.3);
+}
+
+@media (max-width: 768px) {
+  .todo-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .todo-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .todo-image img {
+    max-width: 100%;
+    margin-left: 0 !important;
+  }
+}
+
+
+
+
+    </style>
+    
+
+
+    
+</head>
+<body>
+    <div>
+      <header>
+        <script src="navbar.js"></script>
+        <div class="nav-container">
+          <div class="logo">
+           <a href="../Home_page/Home.html"> <img src="../logo.png" alt="Logo"> </a>
+          </div>
+          <nav>
+            <ul class="nav-links">
+              <li class="dropdown" id="nutrition-dropdown">
+                <a href="../nutrition_page/nutrition.html">Nutrition <i class='bx bx-chevron-down'></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="../nutrition_page/fatloss_page/fatloss.html">Fat Loss</a></li>
+                  <li><a href="../nutrition_page/weightgain_page/weightgain.html">Weight Gain</a></li>
+                  <li><a href="../nutrition_page/musclebuilding_page/musclebuilding.html">Muscle Building</a></li>
+                </ul>
+              </li>
+              <li class="dropdown" id="workouts-dropdown">
+                <a href="../workout_page/workout.html">Workouts <i class='bx bx-chevron-down'></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="../workout_page/chest/chest.html">Chest</a></li>
+                <li><a href="../workout_page/back/back.html">Back</a></li>
+                <li><a href="../workout_page/legs/legs.html">Legs</a></li>
+                <li><a href="../workout_page/shoulders/shoulder.html">Shoulders</a></li>
+                <li><a href="../workout_page/arms/arms.html">Arms</a></li>
+                <li><a href="../workout_page/core/core.html">core</a></li>
+                </ul>
+              </li>
+              <li><a href="../songs/songs.html">Songs</a></li>
+              <li><a href="../calender/calender.html">Calendar</a></li>
+              <li><a href="../to_do_list/todolist.html">To-Do List</a></li>
+              <li class="dropdown" id="author-dropdown">
+                <a href="../Author/aboutme.html">Author <i class='bx bx-chevron-down'></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="../Author/aboutme.html">About Me</a></li>
+                  <li><a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a></li>
+                  <li><a href="mailto:youremail@example.com">Contact</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="login-button-wrapper">
+            <a href="../login-page/login.html" class="login-btn">Login</a>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank" class="icon-link">
+                <i class='bx bxl-linkedin-square'></i>
+              </a>
+              <a href="https://www.instagram.com/skill_issue23040/" target="_blank" class="icon-link">
+                <i class='bx bxl-instagram'></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </header>
+      <section class="hero-section" id="home">
+        <div class="hero-container">
+          <!-- Left Text Block -->
+          <div class="hero-text fade-in-left">
+            <h3 class="welcome-text">Welcome To</h3>
+            <h1 class="hero-title">
+              <span class="ftp-label">FTP:</span>
+              <span class="highlight">Feel The Pump</span>
+            </h1>
+            <p class="subtext" style="
+  background-color: rgba(0, 245, 37, 0.05);
+  padding: 18px 20px;
+  border-left: 4px solid #00f525;
+  color: #e0ffe0;
+  font-size: 17px;
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 245, 90, 0.2);
+">
+  The only place you'll find everything — from weight management to bodybuilding — knitted together in a concise, well-structured way for everyone. 
+  This website features foods with nutritional values, diet formats to follow, workout routines targeting specific muscle groups, 
+  a calendar to track your schedule, a to-do list for personal workout notes, and even music albums to match your workout vibe.
+</p>
+
+            
+          </div>
+      
+          <!-- Logo Sliding in from Right -->
+          <div class="hero-logo-box slide-in-right">
+            <img src="../logo.png" alt="FTP Logo" class="hero-logo" />
+          </div>
+        </div>
+      </section>
+
+
+
+      <section style="background-color:#011b1b; padding: 80px 5%; display: flex; flex-direction: row-reverse; align-items: center; justify-content: space-between; gap: 60px;">
+        <!-- Heading Block (slides from right) -->
+        <div style="flex: 1; animation: slideInRight 1.5s ease forwards;">
+          <h2 style="font-family: 'Orbitron', sans-serif; font-size: 36px; font-weight: bold; color: #00f57a; text-shadow: 0 0 10px #00f57a; margin-bottom: 20px;">
+            Get to Know<br>Your Muscles
+          </h2>
+          <div style="background-color: rgba(0, 245, 90, 0.05); border-left: 4px solid #00f57a; padding: 18px 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 245, 90, 0.2);">
+            <p style="color: #ccc; font-size: 18px; line-height: 1.6; margin: 0;">
+              Discover each muscle group’s role and the best exercises to target them. Whether you’re planning your workout or recovering, this diagram gives you insight into how your body moves and builds strength.
+            </p>
+          </div>
+          
+        </div>
+      
+        <!-- Muscle Anatomy Image (slides from left) -->
+        <div style="flex: 1; animation: slideInLeft 1.5s ease forwards;">
+          <img src="../muscles_diagram.png" alt="Muscle Anatomy" style="width: 200%; max-width: 500px; height: auto;" />
+        </div>
+      </section>
+
+
+
+
+      <a href="../nutrition_page/nutrition.html"><section class="nutrition-section">
+        <div class="nutrition-card" id="nutritionCard">
+          <div class="nutrition-content">
+            <h2>Nutrition Tips</h2>
+            <p>
+              Fuel your body the right way. Discover foods rich in proteins, carbs, and essential vitamins to match your training goals.
+            </p>
+          </div>
+          <div class="nutrition-image">
+            <img src="../nutrition_image.png" alt="Healthy Food"  />
+          </div>
+        </div>
+      </section></a>
+      
+      
+      
+      <a href="../workout_page/workout.html"><section class="workout-section">
+        <div class="workout-card" id="workoutCard">
+          <div class="workout-content">
+            <h2>Workout Plans</h2>
+            <p>
+              Discover effective workout splits and routines. Focus on specific muscle groups <br>with scientifically backed plans to achieve your goals faster.
+            </p>
+          </div>
+          <div class="workout-image">
+            <img src="../workout_image.png" alt="Workout Plan Image"  />
+
+          </div>
+        </div>
+      </section></a>
+
+
+
+
+
+      <a href="../calender/calender.html"><section class="calendar-section">
+        <div class="calendar-card" id="calendarCard">
+          <div class="calendar-content">
+            <h2>Workout Calendar</h2>
+            <p>
+              Stay organized and consistent. Plan your workouts in advance, track your progress, and never miss a training day with our built-in calendar feature.
+            </p>
+          </div>
+          <div class="calendar-image">
+            <img src="../calendar_image.png" alt="Calendar Preview"  />
+          </div>
+        </div>
+      </section></a>
+      
+      
+      
+      <a href="../to_do_list/todolist.html"><section class="todo-section">
+        <div class="todo-card" id="todoCard">
+          <div class="todo-content">
+            <h2>To-Do List</h2>
+            <p>Stay organized with your personal workout tasks, reminders, or motivational notes. Keep track of what matters, one checklist at a time.</p>
+          </div>
+          <div class="todo-image">
+            <img src="../todo_image.png" alt="To-Do List"  />
+          </div>
+        </div>
+      </section></a>
+      
+
+
+
+
+
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h4>FTP: Feel The Pump</h4>
+            <p>Fuel your fitness journey. Build strength,sweat <br> with purpose, and grow beyond your limits..</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="../Home_page/Home.html">Home</a>
+            <a href="../workout_page/workout.html">Workouts</a>
+            <a href="../nutrition_page/nutrition.html">Nutrition</a>
+            <a href="../to_do_list/todolist.html">To-Do List</a>
+          </div>
+      
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="mailto:himanshumudigonda@gmail.com">himanshumudigonda@gmail.com</a>
+            <a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a>
+            <a href="../Author/aboutme.html">About Me</a>
+          </div>
+      
+          <div class="footer-section">
+            <h4>Follow Me</h4>
+            <div class="footer-socials">
+              <a href="https://www.instagram.com/skill_issue23040/" target="_blank"><i class='bx bxl-instagram'></i></a>
+              <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          © 2025 FTP. Built by Himanshu Mudigonda. All rights reserved.
+        </div>
+      </footer>
+      
+    </div>
+</body>
