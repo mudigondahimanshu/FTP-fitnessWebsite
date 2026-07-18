@@ -294,5 +294,84 @@
     if (e.key === 'Escape' && !els.modal.hidden) closeModal();
   });
 
+  /* ---------- Customizable weekly split ---------- */
+  const SPLIT_KEY = 'ftp.split.v1';
+  const SPLIT_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const SPLIT_DEFAULT = ['Chest', 'Legs', 'Shoulders & Arms', 'Back', 'Core', 'Full Body or Cardio', 'Rest'];
+
+  const splitList = document.getElementById('splitList');
+  const splitEditBtn = document.getElementById('splitEditBtn');
+  const splitResetBtn = document.getElementById('splitResetBtn');
+  let splitEditing = false;
+
+  function loadSplit() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(SPLIT_KEY) || 'null');
+      if (Array.isArray(saved) && saved.length === 7) return saved;
+    } catch { /* fall through to default */ }
+    return [...SPLIT_DEFAULT];
+  }
+
+  function saveSplit(values) {
+    try { localStorage.setItem(SPLIT_KEY, JSON.stringify(values)); } catch { /* ignore */ }
+  }
+
+  function isCustomSplit(values) {
+    return values.some((v, i) => v !== SPLIT_DEFAULT[i]);
+  }
+
+  function renderSplit() {
+    const values = loadSplit();
+    splitList.replaceChildren();
+    values.forEach((value, i) => {
+      const li = document.createElement('li');
+      const day = document.createElement('strong');
+      day.textContent = SPLIT_DAYS[i];
+      li.appendChild(day);
+      if (splitEditing) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'split-input';
+        input.value = value;
+        input.maxLength = 40;
+        input.setAttribute('aria-label', `Workout for ${SPLIT_DAYS[i]}`);
+        const fit = () => { input.style.width = `${Math.min(40, Math.max(8, input.value.length + 2))}ch`; };
+        input.addEventListener('input', fit);
+        fit();
+        li.appendChild(input);
+        li.classList.add('editing');
+      } else {
+        li.appendChild(document.createTextNode(' ' + value));
+      }
+      splitList.appendChild(li);
+    });
+    splitEditBtn.textContent = splitEditing ? 'Save' : 'Edit';
+    splitResetBtn.hidden = !(splitEditing || isCustomSplit(values));
+  }
+
+  splitEditBtn.addEventListener('click', () => {
+    if (splitEditing) {
+      const values = [...splitList.querySelectorAll('.split-input')]
+        .map((input, i) => input.value.trim() || SPLIT_DEFAULT[i]);
+      saveSplit(values);
+      splitEditing = false;
+      renderSplit();
+      if (window.FTPApp) window.FTPApp.toast('Weekly split saved.');
+    } else {
+      splitEditing = true;
+      renderSplit();
+      splitList.querySelector('.split-input')?.focus();
+    }
+  });
+
+  splitResetBtn.addEventListener('click', () => {
+    localStorage.removeItem(SPLIT_KEY);
+    splitEditing = false;
+    renderSplit();
+    if (window.FTPApp) window.FTPApp.toast('Weekly split reset to the suggested plan.');
+  });
+
+  renderSplit();
+
   renderAll();
 })();

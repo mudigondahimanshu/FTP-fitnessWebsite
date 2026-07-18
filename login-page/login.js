@@ -106,6 +106,7 @@
     btn.textContent = busyText;
     try {
       const username = await action();
+      rememberLastUser(username);
       if (app && app.toast) app.toast(welcome(username));
       btn.textContent = 'Success!';
       setTimeout(() => { window.location.href = '/'; }, 900);
@@ -184,6 +185,54 @@
     setTimeout(() => window.location.reload(), 700);
   });
 
+  /* ---------- Saved accounts: chips + last-username prefill ---------- */
+  const LAST_USER_KEY = 'ftp.lastUser.v1';
+
+  function rememberLastUser(username) {
+    try { localStorage.setItem(LAST_USER_KEY, username); } catch { /* ignore */ }
+  }
+
+  function renderSavedAccounts() {
+    const accounts = (auth && auth.knownUsers()) || [];
+    if (!accounts.length) return;
+
+    const box = document.createElement('div');
+    box.className = 'saved-accounts';
+    const label = document.createElement('p');
+    label.className = 'saved-label';
+    label.textContent = 'Saved on this device — tap to log in:';
+    box.appendChild(label);
+
+    const row = document.createElement('div');
+    row.className = 'saved-row';
+    for (const name of accounts.slice(0, 4)) {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'saved-chip';
+      const avatar = document.createElement('span');
+      avatar.className = 'saved-avatar';
+      avatar.textContent = name.charAt(0).toUpperCase();
+      chip.append(avatar, document.createTextNode(name));
+      chip.addEventListener('click', () => {
+        setMode('login');
+        loginForm.username.value = name;
+        clearFieldError(loginForm.username);
+        loginForm.password.focus({ preventScroll: true });
+      });
+      row.appendChild(chip);
+    }
+    box.appendChild(row);
+    tabs.insertAdjacentElement('afterend', box);
+
+    const last = (() => {
+      try { return localStorage.getItem(LAST_USER_KEY); } catch { return null; }
+    })();
+    if (last && accounts.includes(last)) {
+      loginForm.username.value = last;
+    }
+  }
+
   const user = auth && auth.currentUser();
   if (user) showSignedIn(user);
+  else renderSavedAccounts();
 })();

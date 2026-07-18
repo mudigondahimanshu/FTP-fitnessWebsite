@@ -83,7 +83,14 @@ const FTPAuth = (() => {
     localStorage.removeItem(SESSION_KEY);
   }
 
-  return { register, login, logout, currentUser };
+  /** Usernames of accounts saved in this browser (most recent first). */
+  function knownUsers() {
+    return Object.values(loadUsers())
+      .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))
+      .map((u) => u.username);
+  }
+
+  return { register, login, logout, currentUser, knownUsers };
 })();
 
 window.FTPAuth = FTPAuth;

@@ -81,17 +81,15 @@
     <section class="section" style="padding-top: 0;">
       <div class="container">
         <div class="card split-card reveal">
-          <h3>Suggested Weekly Split</h3>
-          <ul class="split-list">
-            <li><strong>Mon</strong> Chest</li>
-            <li><strong>Tue</strong> Legs</li>
-            <li><strong>Wed</strong> Shoulders &amp; Arms</li>
-            <li><strong>Thu</strong> Back</li>
-            <li><strong>Fri</strong> Core</li>
-            <li><strong>Sat</strong> Full Body or Cardio</li>
-            <li><strong>Sun</strong> Rest</li>
-          </ul>
-          <p class="split-tip">Tip: do cardio at the end of your workout for better results.</p>
+          <div class="split-head">
+            <h3>My Weekly Split</h3>
+            <div class="split-actions">
+              <button type="button" class="btn btn-ghost split-btn" id="splitEditBtn">Edit</button>
+              <button type="button" class="btn btn-ghost split-btn" id="splitResetBtn" hidden>Reset</button>
+            </div>
+          </div>
+          <ul class="split-list" id="splitList"></ul>
+          <p class="split-tip">Tip: do cardio at the end of your workout for better results. Your split is saved in this browser.</p>
         </div>
       </div>
     </section>
