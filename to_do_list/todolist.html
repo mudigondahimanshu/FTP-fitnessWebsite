@@ -1,145 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><to-do-list></to-do-list> page</title>
-    <link rel="stylesheet" href="todolist.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="todolist.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Oswald&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="../logo.png"> <!--fevicon need to be changed every time-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List · FTP Feel The Pump</title>
+  <meta name="description" content="A priority to-do list for your training goals — tasks are ordered by a real min-heap priority queue, with live trie search and instant undo." />
+  <link rel="icon" type="image/webp" href="/assets/img/logo-small.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
+  <link rel="stylesheet" href="/to_do_list/todolist.css" />
 </head>
 <body>
-  <div>
-    <header>
-      <div class="nav-container">
-      <script src="todolist.js"></script>
-      <div class="nav-container">
-        <div class="logo">
-            <a href="/idex.html"> <img src="../logo.png" alt="Logo"> </a>
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li class="dropdown" id="nutrition-dropdown">
-              <a href="../nutrition_page/nutrition.html">Nutrition <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../nutrition_page/fatloss_page/fatloss.html">Fat Loss</a></li>
-                <li><a href="../nutrition_page/weightgain_page/weightgain.html">Weight Gain</a></li>
-                <li><a href="../nutrition_page/musclebuilding_page/musclebuilding.html">Muscle Building</a></li>
-              </ul>
-            </li>
-            <li class="dropdown" id="workouts-dropdown">
-              <a href="../workout_page/workout.html">Workouts <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../workout_page/chest/chest.html">Chest</a></li>
-                <li><a href="../workout_page/back/back.html">Back</a></li>
-                <li><a href="../workout_page/legs/legs.html">Legs</a></li>
-                <li><a href="../workout_page/shoulders/shoulder.html">Shoulders</a></li>
-                <li><a href="../workout_page/arms/arms.html">Arms</a></li>
-                <li><a href="../workout_page/core/core.html">core</a></li>
-              </ul>
-            </li>
-            <li><a href="../songs/songs.html">Songs</a></li>
-            <li><a href="../calender/calender.html">Calendar</a></li>
-            <li><a href="../to_do_list/todolist.html">To-Do List</a></li>
-            <li class="dropdown" id="author-dropdown">
-              <a href="../Author/aboutme.html">Author <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../Author/aboutme.html">About Me</a></li>
-                <li><a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a></li>
-                <li><a href="mailto:youremail@example.com">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/index.html">Home</a>
+          <span class="sep">/</span>
+          <span aria-current="page">To-Do List</span>
         </nav>
-        <div class="login-button-wrapper">
-          <a href="../login-page/login.html" class="login-btn">Login</a>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank" class="icon-link">
-              <i class='bx bxl-linkedin-square'></i>
-            </a>
-            <a href="https://www.instagram.com/skill_issue23040/" target="_blank" class="icon-link">
-              <i class='bx bxl-instagram'></i>
-            </a>
-          </div>
+        <span class="eyebrow">Stay Organized</span>
+        <h1 class="page-title">Priority <span class="glow">To-Do</span> List</h1>
+        <p class="lead">
+          Capture your training goals, give each one a priority and a due date, and let the list
+          surface what matters most. Everything is saved in your browser — no account needed.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="stat-row reveal">
+          <div class="stat"><span class="num" id="stat-total">0</span><span class="label">Total</span></div>
+          <div class="stat"><span class="num" id="stat-active">0</span><span class="label">Active</span></div>
+          <div class="stat"><span class="num" id="stat-done">0</span><span class="label">Completed</span></div>
+          <div class="stat"><span class="num" id="stat-high">0</span><span class="label">High Priority</span></div>
         </div>
       </div>
-    </div>
-    </header>
-    <section class="hero-section">  <!--this is the section below the navbar-->
-      
-        
-
-
-
-<div class="todo-container">
-  <h2 class="todo-title">Your Notes</h2>
-  <div class="todo-input-section">
-    <input type="text" id="todo-input" placeholder="Enter a task" />
-    <button id="todo-add-btn">Add</button>
-  </div>
-  <ul id="todo-list" class="todo-list"></ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </section>
-    
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>FTP: Feel The Pump</h4>
-      <p>Fuel your fitness journey. Build strength,sweat <br> with purpose, and grow beyond your limits..</p>
-    </div>
 
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="/idex.html">Home</a>
-      <a href="../workout_page/workout.html">Workouts</a>
-      <a href="../nutrition_page/nutrition.html">Nutrition</a>
-      <a href="../to_do_list/todolist.html">To-Do List</a>
-    </div>
+    <!-- List -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container todo-layout">
+        <!-- Add form -->
+        <div class="card add-card reveal">
+          <h3>Add a Task</h3>
+          <form id="add-form" novalidate>
+            <div class="field" id="title-field">
+              <label for="task-title">Task</label>
+              <input id="task-title" type="text" maxlength="80" placeholder="e.g. Leg day — squats 5×5" autocomplete="off" />
+              <p class="error-msg">Please enter a task first.</p>
+            </div>
+            <div class="field">
+              <label for="task-priority">Priority</label>
+              <select id="task-priority">
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="task-due">Due date (optional)</label>
+              <input id="task-due" type="date" />
+            </div>
+            <button type="submit" class="btn btn-primary add-btn">Add Task</button>
+          </form>
+        </div>
 
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <a href="mailto:himanshumudigonda@gmail.com">himanshumudigonda@gmail.com</a>
-      <a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a>
-      <a href="../Author/aboutme.html">About Me</a>
-    </div>
+        <!-- Task lists -->
+        <div class="list-col reveal reveal-delay-1">
+          <div class="toolbar">
+            <input id="task-search" class="search-input" type="search" placeholder="Search tasks…" aria-label="Search tasks" autocomplete="off" />
+            <button id="undo-btn" class="btn btn-ghost btn-sm" disabled title="Undo last change (Ctrl/Cmd + Z)">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v6h6" /><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6.4 2.6L3 13" /></svg>
+              Undo (<span id="undo-count">0</span>)
+            </button>
+          </div>
+          <p class="dsa-hint">Sorted by min-heap priority queue · live search powered by a trie</p>
 
-    <div class="footer-section">
-      <h4>Follow Me</h4>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/skill_issue23040/" target="_blank"><i class='bx bxl-instagram'></i></a>
-        <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+          <ul id="active-list" class="task-list" aria-label="Active tasks"></ul>
+
+          <div id="empty-state" class="empty-state" hidden>
+            <p><strong>No tasks yet — your slate is clean.</strong></p>
+            <p>Add your first goal on the left and start feeling the pump.</p>
+          </div>
+          <p id="no-match" class="no-match" hidden>No tasks match your search.</p>
+
+          <details id="completed-wrap" class="completed" hidden>
+            <summary>Completed (<span id="completed-count">0</span>)</summary>
+            <ul id="completed-list" class="task-list" aria-label="Completed tasks"></ul>
+          </details>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <div class="footer-bottom">
-    © 2025 FTP. Built by Himanshu Mudigonda. All rights reserved.
-  </div>
-</footer>
-  
-  </div>
+  <script src="/assets/js/dsa.js" defer></script>
+  <script src="/assets/js/auth.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/to_do_list/todolist.js" defer></script>
 </body>
+</html>

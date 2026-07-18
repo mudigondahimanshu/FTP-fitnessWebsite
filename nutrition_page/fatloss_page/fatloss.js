@@ -1,33 +1,13 @@
-function setupHoverDropdown(id) {
-    const dropdown = document.getElementById(id);
-    const menu = dropdown.querySelector(".dropdown-menu");
-    let timeout;
-  
-    dropdown.addEventListener("mouseenter", () => {
-      clearTimeout(timeout);
-      menu.style.display = "block";
+/* Fat loss plan — confirm PDF download with a toast */
+(function () {
+  'use strict';
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[download]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.FTPApp && window.FTPApp.toast) {
+          window.FTPApp.toast('Fat Loss Diet Plan PDF is downloading.');
+        }
+      });
     });
-  
-    dropdown.addEventListener("mouseleave", () => {
-      timeout = setTimeout(() => {
-        menu.style.display = "none";
-      }, 50);
-    });
-  
-    menu.addEventListener("mouseenter", () => {
-      clearTimeout(timeout);
-    });
-  
-    menu.addEventListener("mouseleave", () => {
-      timeout = setTimeout(() => {
-        menu.style.display = "none";
-      }, 50);
-    });
-  }
-  
-  window.addEventListener("DOMContentLoaded", () => {
-    setupHoverDropdown("nutrition-dropdown");
-    setupHoverDropdown("workouts-dropdown");
-    setupHoverDropdown("author-dropdown");
   });
-  
+})();

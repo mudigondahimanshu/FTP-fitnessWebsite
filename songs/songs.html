@@ -1,160 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs page</title>
-    <link rel="stylesheet" href="songs.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="songs.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Oswald&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="/logo.png"> <!--fevicon need to be changed every time-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Playlists · FTP Feel The Pump</title>
+  <meta name="description" content="Gym playlists that match your training vibe — hype mixes for heavy lifts, focus mixes for steady grinding and cooldown tracks for recovery." />
+  <link rel="icon" type="image/webp" href="/assets/img/logo-small.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
+  <link rel="stylesheet" href="/songs/songs.css" />
 </head>
 <body>
-  <div>
-    <header>
-      <div class="nav-container">
-      <script src="songs.js"></script>
-      <div class="nav-container">
-        <div class="logo">
-            <a href="/idex.html"> <img src="../logo.png" alt="Logo"> </a>
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li class="dropdown" id="nutrition-dropdown">
-              <a href="../nutrition_page/nutrition.html">Nutrition <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../nutrition_page/fatloss_page/fatloss.html">Fat Loss</a></li>
-                <li><a href="../nutrition_page/weightgain_page/weightgain.html">Weight Gain</a></li>
-                <li><a href="../nutrition_page/musclebuilding_page/musclebuilding.html">Muscle Building</a></li>
-              </ul>
-            </li>
-            <li class="dropdown" id="workouts-dropdown">
-              <a href="../workout_page/workout.html">Workouts <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../workout_page/chest/chest.html">Chest</a></li>
-                <li><a href="../workout_page/back/back.html">Back</a></li>
-                <li><a href="../workout_page/legs/legs.html">Legs</a></li>
-                <li><a href="../workout_page/shoulders/shoulder.html">Shoulders</a></li>
-                <li><a href="../workout_page/arms/arms.html">Arms</a></li>
-                <li><a href="../workout_page/core/core.html">core</a></li>
-              </ul>
-            </li>
-            <li><a href="../songs/songs.html">Songs</a></li>
-            <li><a href="../calender/calender.html">Calendar</a></li>
-            <li><a href="../to_do_list/todolist.html">To-Do List</a></li>
-            <li class="dropdown" id="author-dropdown">
-              <a href="../Author/aboutme.html">Author <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../Author/aboutme.html">About Me</a></li>
-                <li><a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a></li>
-                <li><a href="mailto:youremail@example.com">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div class="login-button-wrapper">
-          <a href="../login-page/login.html" class="login-btn">Login</a>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank" class="icon-link">
-              <i class='bx bxl-linkedin-square'></i>
-            </a>
-            <a href="https://www.instagram.com/skill_issue23040/" target="_blank" class="icon-link">
-              <i class='bx bxl-instagram'></i>
-            </a>
-          </div>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Training Fuel</span>
+        <h1 class="page-title">Workout <span class="glow">Playlists</span></h1>
+        <p class="lead">
+          Music has the power to elevate your performance by boosting your mood and motivation.
+          A good playlist can help you push past limits, maintain rhythm and stay focused
+          throughout your training. Whether you're lifting heavy or running that last mile,
+          music drives intensity and enhances endurance. Let the beat fuel your pump and keep
+          you moving with purpose.
+        </p>
       </div>
-    </div>
-    </header>
-    <section class="hero-section">  <!--this is the section below the navbar-->
-      
-
-
-
-        <section class="songs-hero">
-  <h1 class="songs-heading">Workout Playlist Zone</h1>
-  <p class="songs-subtext">
-    Music has the power to elevate your performance by boosting your mood and motivation. 
-    A good playlist can help you push past limits, maintain rhythm, and stay focused throughout your training. 
-    Whether it’s lifting heavy or running that last mile, music drives intensity and enhances endurance. 
-    Let the beat fuel your pump and keep you moving with purpose.
-  </p>
-</section>
-
-<div class="playlist-grid">
-  <div class="spotify-card">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2yf15hiBRKPKPQlJNfENUE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>  </div>
-  <div class="spotify-card">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX76Wlfdnj7AP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>  </div>
-<div class="spotify-card">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6lre0An0V7YFE1HJUnMgnE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-<div class="spotify-card">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6FrBYANMlV06qnWLoGZVy5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-<div class="spotify-card">
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0R1X6HMfzTiWiRbbdV5MjO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </section>
-    
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>FTP: Feel The Pump</h4>
-      <p>Fuel your fitness journey. Build strength,sweat <br> with purpose, and grow beyond your limits..</p>
-    </div>
 
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="/idex.html">Home</a>
-      <a href="../workout_page/workout.html">Workouts</a>
-      <a href="../nutrition_page/nutrition.html">Nutrition</a>
-      <a href="../to_do_list/todolist.html">To-Do List</a>
-    </div>
+    <!-- Playlists -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="filter-row" role="group" aria-label="Filter playlists by mood">
+          <span class="filter-label">Mood</span>
+          <button type="button" class="tag filter-tag is-active" data-mood="all" aria-pressed="true">All</button>
+          <button type="button" class="tag filter-tag" data-mood="hype" aria-pressed="false">Hype</button>
+          <button type="button" class="tag filter-tag" data-mood="focus" aria-pressed="false">Focus</button>
+          <button type="button" class="tag filter-tag" data-mood="cooldown" aria-pressed="false">Cooldown</button>
+        </div>
 
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <a href="mailto:himanshumudigonda@gmail.com">himanshumudigonda@gmail.com</a>
-      <a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a>
-      <a href="../Author/aboutme.html">About Me</a>
-    </div>
+        <div class="card-grid playlist-grid" id="playlist-grid">
+          <article class="card playlist-card reveal" data-mood="hype">
+            <div class="playlist-head">
+              <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <h3>Full Send</h3>
+              <span class="tag">Hype</span>
+            </div>
+            <p class="playlist-note">Max-energy tracks for PR attempts and top sets.</p>
+            <div class="embed-wrap">
+              <iframe src="https://open.spotify.com/embed/playlist/2yf15hiBRKPKPQlJNfENUE?utm_source=generator" title="Spotify playlist — Full Send (hype mix)" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </article>
 
-    <div class="footer-section">
-      <h4>Follow Me</h4>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/skill_issue23040/" target="_blank"><i class='bx bxl-instagram'></i></a>
-        <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+          <article class="card playlist-card reveal reveal-delay-1" data-mood="hype">
+            <div class="playlist-head">
+              <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <h3>Beast Mode</h3>
+              <span class="tag">Hype</span>
+            </div>
+            <p class="playlist-note">The classic aggressive gym mix — loud, fast, relentless.</p>
+            <div class="embed-wrap">
+              <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX76Wlfdnj7AP?utm_source=generator" title="Spotify playlist — Beast Mode (hype mix)" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </article>
+
+          <article class="card playlist-card reveal reveal-delay-2" data-mood="focus">
+            <div class="playlist-head">
+              <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <h3>Locked In</h3>
+              <span class="tag">Focus</span>
+            </div>
+            <p class="playlist-note">Steady rhythm to keep your tempo through long sessions.</p>
+            <div class="embed-wrap">
+              <iframe src="https://open.spotify.com/embed/playlist/6lre0An0V7YFE1HJUnMgnE?utm_source=generator" title="Spotify playlist — Locked In (focus mix)" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </article>
+
+          <article class="card playlist-card reveal" data-mood="focus">
+            <div class="playlist-head">
+              <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <h3>Steady Grind</h3>
+              <span class="tag">Focus</span>
+            </div>
+            <p class="playlist-note">Head-down volume work — no skips, no distractions.</p>
+            <div class="embed-wrap">
+              <iframe src="https://open.spotify.com/embed/playlist/6FrBYANMlV06qnWLoGZVy5?utm_source=generator" title="Spotify playlist — Steady Grind (focus mix)" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </article>
+
+          <article class="card playlist-card reveal reveal-delay-1" data-mood="cooldown">
+            <div class="playlist-head">
+              <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <h3>Wind Down</h3>
+              <span class="tag">Cooldown</span>
+            </div>
+            <p class="playlist-note">Ease the heart rate down — stretching, walking, recovery.</p>
+            <div class="embed-wrap">
+              <iframe src="https://open.spotify.com/embed/playlist/0R1X6HMfzTiWiRbbdV5MjO?utm_source=generator" title="Spotify playlist — Wind Down (cooldown mix)" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </article>
+        </div>
+
+        <p class="empty-note" id="empty-note" hidden>No playlists match that mood yet — check back soon.</p>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <div class="footer-bottom">
-    © 2025 FTP. Built by Himanshu Mudigonda. All rights reserved.
-  </div>
-</footer>
-  
-  </div>
+  <script src="/assets/js/dsa.js" defer></script>
+  <script src="/assets/js/auth.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/songs/songs.js" defer></script>
 </body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FTP · Feel The Pump — Workouts, Nutrition & Training Tools</title>
+  <meta name="description" content="FTP: Feel The Pump — workout routines by muscle group, nutrition plans, a training calendar, to-do lists and gym playlists. Everything you need, in one place." />
+  <link rel="icon" type="image/webp" href="/assets/img/logo-small.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
+  <style>
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4rem, 10vw, 7.5rem) 0 clamp(3rem, 7vw, 5rem);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 78% 22%, rgba(34, 245, 94, 0.13), transparent 65%),
+        radial-gradient(ellipse 45% 45% at 8% 90%, rgba(34, 245, 94, 0.05), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 5.4rem);
+      font-weight: 800;
+      margin: 0.4rem 0 1.2rem;
+    }
+    .hero-title .glow {
+      color: var(--accent);
+      text-shadow: 0 0 32px var(--accent-glow);
+      display: block;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.8rem; }
+    .hero-visual { position: relative; display: flex; justify-content: center; }
+    .hero-visual .ring {
+      position: absolute;
+      inset: -8%;
+      border-radius: 50%;
+      border: 1px solid rgba(34, 245, 94, 0.18);
+      animation: spin 26s linear infinite;
+    }
+    .hero-visual .ring::before {
+      content: '';
+      position: absolute;
+      top: -5px; left: 50%;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hero-visual img {
+      width: min(360px, 75vw);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 60px rgba(34, 245, 94, 0.12);
+    }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .eyebrow { justify-content: center; }
+      .hero .lead { margin-inline: auto; }
+      .hero-visual { order: -1; }
+      .hero-visual img { width: min(240px, 60vw); }
+    }
+
+    /* ---------- Feature rows ---------- */
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .feature-row + .feature-row { margin-top: clamp(3rem, 7vw, 5rem); }
+    .feature-row.flip .feature-media { order: 2; }
+    .feature-media {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    .feature-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .feature-copy h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .feature-copy p { color: var(--text-muted); font-size: 1.05rem; }
+    .feature-copy .btn { margin-top: 1.1rem; }
+    @media (max-width: 800px) {
+      .feature-row, .feature-row.flip { grid-template-columns: 1fr; }
+      .feature-row.flip .feature-media { order: 0; }
+    }
+
+    /* ---------- Muscle map ---------- */
+    .muscle-band {
+      background: var(--bg-raised);
+      border-block: 1px solid var(--border);
+    }
+    .muscle-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .muscle-grid img { border-radius: var(--radius-lg); }
+    .muscle-chips { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.3rem; }
+    @media (max-width: 800px) { .muscle-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- Recently viewed ---------- */
+    #recent-section { display: none; }
+    #recent-section.has-items { display: block; }
+    .recent-list { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .recent-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      color: var(--text-muted);
+      border-radius: 99px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .recent-list a:hover { border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Welcome to FTP</span>
+          <h1 class="hero-title">Feel<span class="glow">The Pump</span></h1>
+          <p class="lead">
+            Everything from weight management to bodybuilding, knitted together in one place —
+            nutrition tables and diet formats, muscle-group workout routines, a training calendar,
+            personal to-do lists and playlists that match your workout vibe.
+          </p>
+          <div class="hero-actions">
+            <a href="/workout_page/workout.html" class="btn btn-primary">Start Training</a>
+            <a href="/nutrition_page/nutrition.html" class="btn btn-ghost">Explore Nutrition</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span class="ring" aria-hidden="true"></span>
+          <img src="/assets/img/logo.webp" alt="FTP — Feel The Pump logo" width="360" height="360" fetchpriority="high" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="stat-row reveal">
+          <div class="stat"><span class="num">6</span><span class="label">Muscle Groups</span></div>
+          <div class="stat"><span class="num">50+</span><span class="label">Exercises</span></div>
+          <div class="stat"><span class="num">3</span><span class="label">Diet Plans</span></div>
+          <div class="stat"><span class="num">100%</span><span class="label">Free Forever</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Muscle map band -->
+    <section class="section muscle-band">
+      <div class="container muscle-grid">
+        <div class="reveal">
+          <img src="/assets/img/muscles_diagram.webp" alt="Anatomical diagram of major muscle groups" loading="lazy" width="500" height="500" />
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="eyebrow">Know Your Body</span>
+          <h2 class="section-head" style="margin-bottom: 0.6rem;">Get to Know Your Muscles</h2>
+          <p class="lead">
+            Discover each muscle group's role and the best exercises to target it. Whether you're
+            planning your next session or recovering from the last one, understanding how your body
+            moves is the first step to building real strength.
+          </p>
+          <div class="muscle-chips">
+            <a class="tag" href="/workout_page/chest/chest.html">Chest</a>
+            <a class="tag" href="/workout_page/back/back.html">Back</a>
+            <a class="tag" href="/workout_page/legs/legs.html">Legs</a>
+            <a class="tag" href="/workout_page/shoulders/shoulder.html">Shoulders</a>
+            <a class="tag" href="/workout_page/arms/arms.html">Arms</a>
+            <a class="tag" href="/workout_page/core/core.html">Core</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature rows -->
+    <section class="section">
+      <div class="container">
+        <div class="feature-row reveal">
+          <div class="feature-media"><img src="/assets/img/nutrition_image.webp" alt="Healthy high-protein foods" loading="lazy" width="640" height="480" /></div>
+          <div class="feature-copy">
+            <span class="eyebrow">Fuel Right</span>
+            <h2>Nutrition Tips</h2>
+            <p>Fuel your body the right way. Discover foods rich in protein, carbs and essential vitamins, with complete diet formats matched to your training goal — cutting, bulking or lean building.</p>
+            <a href="/nutrition_page/nutrition.html" class="btn btn-ghost">Browse Nutrition</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+          <div class="feature-media"><img src="/assets/img/workout_image.webp" alt="Athlete training with weights" loading="lazy" width="640" height="480" /></div>
+          <div class="feature-copy">
+            <span class="eyebrow">Train Smart</span>
+            <h2>Workout Plans</h2>
+            <p>Effective splits and routines for every muscle group, with video-backed exercises and clear set-and-rep guidance so you reach your goals faster.</p>
+            <a href="/workout_page/workout.html" class="btn btn-ghost">See Workouts</a>
+          </div>
+        </div>
+
+        <div class="feature-row reveal">
+          <div class="feature-media"><img src="/assets/img/calendar_image.webp" alt="Training calendar with scheduled sessions" loading="lazy" width="640" height="480" /></div>
+          <div class="feature-copy">
+            <span class="eyebrow">Stay Consistent</span>
+            <h2>Workout Calendar</h2>
+            <p>Plan sessions in advance, track your progress and never miss a training day. Your schedule lives in your browser — no account needed.</p>
+            <a href="/calender/calender.html" class="btn btn-ghost">Open Calendar</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+          <div class="feature-media"><img src="/assets/img/todo_image.webp" alt="Checklist of workout tasks" loading="lazy" width="640" height="480" /></div>
+          <div class="feature-copy">
+            <span class="eyebrow">Stay Organized</span>
+            <h2>Priority To-Do List</h2>
+            <p>A smart task list that automatically surfaces what matters most — powered by a real priority queue under the hood. Add tasks, set priorities, and undo mistakes instantly.</p>
+            <a href="/to_do_list/todolist.html" class="btn btn-ghost">Open To-Do List</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently viewed (LRU cache) -->
+    <section class="section" id="recent-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head"><h2>Pick Up Where You Left Off</h2></div>
+        <div class="recent-list" id="recent-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/dsa.js" defer></script>
+  <script src="/assets/js/auth.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const recent = window.FTPApp.recentPages();
+      if (recent.length > 0) {
+        const list = document.getElementById('recent-list');
+        for (const [url, title] of recent) {
+          const a = document.createElement('a');
+          a.href = url;
+          a.textContent = title;
+          list.appendChild(a);
+        }
+        document.getElementById('recent-section').classList.add('has-items');
+      }
+    });
+  </script>
+</body>
+</html>

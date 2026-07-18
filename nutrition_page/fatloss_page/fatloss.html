@@ -1,131 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fat-loss page</title>
-    <link rel="stylesheet" href="fatloss.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="fatloss.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Oswald&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="../../logo.png"> <!--fevicon need to be changed every time-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fat Loss Diet Plan · FTP Feel The Pump</title>
+  <meta name="description" content="A complete fat loss diet plan — calorie and macro targets, a full daily meal plan with options, a weekly workout plan and smart tips for sustainable fat loss." />
+  <link rel="icon" type="image/webp" href="/assets/img/logo-small.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
+  <link rel="stylesheet" href="/nutrition_page/fatloss_page/fatloss.css" />
 </head>
 <body>
-  <div>
-    <header>
-      <div class="nav-container">
-      <script src="fatloss.js"></script>
-      <div class="nav-container">
-        <div class="logo">
-            <a href="/idex.html"> <img src="../../logo.png" alt="Logo"> </a>
-        </div>
-        <nav>
-          <ul class="nav-links">
-            <li class="dropdown" id="nutrition-dropdown">
-              <a href="../../nutrition_page/nutrition.html">Nutrition <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../../nutrition_page/fatloss_page/fatloss.html">Fat Loss</a></li>
-                <li><a href="../../nutrition_page/weightgain_page/weightgain.html">Weight Gain</a></li>
-                <li><a href="../../nutrition_page/musclebuilding_page/musclebuilding.html">Muscle Building</a></li>
-              </ul>
-            </li>
-            <li class="dropdown" id="workouts-dropdown">
-              <a href="../../workout_page/workout.html">Workouts <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../../workout_page/chest/chest.html">Chest</a></li>
-                <li><a href="../../workout_page/back/back.html">Back</a></li>
-                <li><a href="../../workout_page/legs/legs.html">Legs</a></li>
-                <li><a href="../../workout_page/shoulders/shoulder.html">Shoulders</a></li>
-                <li><a href="../../workout_page/arms/arms.html">Arms</a></li>
-                <li><a href="../web_project/workout_page/core/core.html">core</a></li>
-              </ul>
-            </li>
-            <li><a href="../../songs/songs.html">Songs</a></li>
-            <li><a href="../../calender/calender.html">Calendar</a></li>
-            <li><a href="../../to_do_list/todolist.html">To-Do List</a></li>
-            <li class="dropdown" id="author-dropdown">
-              <a href="../web_project/Author/aboutme.html">Author <i class='bx bx-chevron-down'></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="../web_project/Author/aboutme.html">About Me</a></li>
-                <li><a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a></li>
-                <li><a href="mailto:youremail@example.com">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="/nutrition_page/nutrition.html">Nutrition</a>
+          <span class="sep">/</span>
+          <span>Fat Loss</span>
         </nav>
-        <div class="login-button-wrapper">
-          <a href="../../login-page/login.html" class="login-btn">Login</a>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank" class="icon-link">
-              <i class='bx bxl-linkedin-square'></i>
-            </a>
-            <a href="https://www.instagram.com/skill_issue23040/" target="_blank" class="icon-link">
-              <i class='bx bxl-instagram'></i>
-            </a>
+        <span class="eyebrow">Cut Smart</span>
+        <h1 class="page-title">Fat <span class="glow">Loss</span> Diet Plan</h1>
+        <p class="lead">
+          Built for a moderate activity level (workouts 3–5 times a week), this plan keeps you in a
+          steady calorie deficit while protecting muscle — clean meals, high protein and simple habits.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/nutrition_page/Fat_Loss_Diet_Plan.pdf" download>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12" /><path d="m7 11 5 5 5-5" /><path d="M4 21h16" /></svg>
+            Download Plan (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Targets -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Numbers</span>
+          <h2>Calorie &amp; Macronutrient Targets</h2>
+        </div>
+        <div class="stat-row reveal">
+          <div class="stat"><span class="num">1,400–1,600</span><span class="label">kcal / day</span></div>
+          <div class="stat"><span class="num">100–120 g</span><span class="label">Protein (1.5 g/kg)</span></div>
+          <div class="stat"><span class="num">~130–160 g</span><span class="label">Carbs</span></div>
+          <div class="stat"><span class="num">~50 g</span><span class="label">Fat</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily meal plan -->
+    <section class="section meal-band">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Daily Meal Plan</span>
+          <h2>What to Eat, Meal by Meal</h2>
+        </div>
+        <div class="card-grid meal-grid">
+          <div class="card reveal">
+            <span class="tag">Early Morning</span>
+            <h3>Wake-Up Fuel</h3>
+            <ul>
+              <li>1 glass warm water with lemon</li>
+              <li>5–6 soaked almonds + 2 walnuts</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <span class="tag">Breakfast</span>
+            <h3>Two Options</h3>
+            <ul>
+              <li><strong>Option 1:</strong> 3 egg whites + 1 whole egg bhurji, 1 multigrain toast or 1 small phulka, 1 cup green tea or black coffee (no sugar)</li>
+              <li><strong>Option 2:</strong> Oats porridge with low-fat milk + 1 boiled egg, ½ banana (optional)</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <span class="tag">Mid-Morning Snack</span>
+            <h3>Light &amp; Fresh</h3>
+            <ul>
+              <li>1 fruit (apple, orange, guava or papaya)</li>
+              <li>Green tea (optional)</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <span class="tag">Lunch</span>
+            <h3>Two Options</h3>
+            <ul>
+              <li><strong>Option 1:</strong> Grilled chicken breast (100–120 g), 1 cup brown rice or 2 rotis, mixed vegetable sabzi, green salad</li>
+              <li><strong>Option 2:</strong> 1 cup dal + 2 boiled eggs + 1 chapati, vegetable salad, ½ cup low-fat curd</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <span class="tag">Evening Snack</span>
+            <h3>Protein Top-Up</h3>
+            <ul>
+              <li>Green tea or black coffee (no sugar)</li>
+              <li>1 boiled egg, roasted chana (30 g) or 1 whey protein shake</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <span class="tag">Dinner</span>
+            <h3>Two Options</h3>
+            <ul>
+              <li><strong>Option 1:</strong> Grilled fish or chicken (100 g), sautéed veggies, 1 small roti or ½ cup cooked quinoa</li>
+              <li><strong>Option 2:</strong> Egg-white omelette with veggies + clear soup</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <span class="tag">Post-Dinner</span>
+            <h3>If Hungry</h3>
+            <ul>
+              <li>1 glass warm turmeric milk or chamomile tea</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-    </header>
-    <section class="hero-section">  <!--this is the section below the navbar-->
-      
-        
-
-<div class="doc-preview-section">
-  <h2 class="doc-preview-heading">Fat Loss Plan Preview</h2>
-  <div class="doc-preview-card">
-    <iframe src="../../nutrition_page/Fat_Loss_Diet_Plan.pdf" frameborder="0"></iframe>
-  </div>
-</div>
-
-
-
-
-
     </section>
-    
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>FTP: Feel The Pump</h4>
-      <p>Fuel your fitness journey. Build strength,sweat <br> with purpose, and grow beyond your limits..</p>
-    </div>
 
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="/idex.html">Home</a>
-      <a href="/workout_page/workout.html">Workouts</a>
-      <a href="../../nutrition_page/nutrition.html">Nutrition</a>
-      <a href="../../to_do_list/todolist.html">To-Do List</a>
-    </div>
-
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <a href="mailto:himanshumudigonda@gmail.com">himanshumudigonda@gmail.com</a>
-      <a href="https://github.com/mudigondahimanshu" target="_blank">GitHub</a>
-      <a href="../web_project/Author/aboutme.html">About Me</a>
-    </div>
-
-    <div class="footer-section">
-      <h4>Follow Me</h4>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/skill_issue23040/" target="_blank"><i class='bx bxl-instagram'></i></a>
-        <a href="https://www.linkedin.com/in/himanshu-mudigonda-09a9ba29b/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+    <!-- Workout plan + tips -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Beyond the Plate</span>
+          <h2>Weekly Workout Plan &amp; Smart Tips</h2>
+        </div>
+        <div class="card-grid tips-grid">
+          <div class="card reveal">
+            <h3>Weekly Workout Plan</h3>
+            <ul>
+              <li>Strength training: 4–5x/week (45 minutes)</li>
+              <li>Cardio: 30–45 minutes of walking, cycling or HIIT</li>
+              <li>Steps goal: 8,000–10,000 daily</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <h3>Smart Tips</h3>
+            <ul>
+              <li>Hydration: 2.5–3 litres of water per day</li>
+              <li>Avoid fried food, refined carbs, sugar and packaged foods</li>
+              <li>Meal prep helps you stick to portions and macros</li>
+              <li>One cheat meal per week is fine — not cheat days</li>
+              <li>Sleep 7–8 hours a night for fat loss and recovery</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <h3>Expected Weight Loss</h3>
+            <p>0.7–1 kg per week — roughly 10–12 kg in 3 months if followed consistently.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <div class="footer-bottom">
-    © 2025 FTP. Built by Himanshu Mudigonda. All rights reserved.
-  </div>
-</footer>
-  
-  </div>
+  <script src="/assets/js/dsa.js" defer></script>
+  <script src="/assets/js/auth.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  <script src="/nutrition_page/fatloss_page/fatloss.js" defer></script>
 </body>
+</html>

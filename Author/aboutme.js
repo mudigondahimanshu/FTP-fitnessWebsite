@@ -1,33 +1,16 @@
-function setupHoverDropdown(id) {
-    const dropdown = document.getElementById(id);
-    const menu = dropdown.querySelector(".dropdown-menu");
-    let timeout;
-  
-    dropdown.addEventListener("mouseenter", () => {
-      clearTimeout(timeout);
-      menu.style.display = "block";
-    });
-  
-    dropdown.addEventListener("mouseleave", () => {
-      timeout = setTimeout(() => {
-        menu.style.display = "none";
-      }, 50);
-    });
-  
-    menu.addEventListener("mouseenter", () => {
-      clearTimeout(timeout);
-    });
-  
-    menu.addEventListener("mouseleave", () => {
-      timeout = setTimeout(() => {
-        menu.style.display = "none";
-      }, 50);
-    });
-  }
-  
-  window.addEventListener("DOMContentLoaded", () => {
-    setupHoverDropdown("nutrition-dropdown");
-    setupHoverDropdown("workouts-dropdown");
-    setupHoverDropdown("author-dropdown");
+/* About the Author — copy email helper */
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('copy-email');
+  if (!btn) return;
+
+  const EMAIL = 'himanshumudigonda@gmail.com';
+
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      if (window.FTPApp) window.FTPApp.toast('Email address copied to clipboard');
+    } catch (err) {
+      if (window.FTPApp) window.FTPApp.toast('Could not copy — email is ' + EMAIL, 'error');
+    }
   });
-  
+});
