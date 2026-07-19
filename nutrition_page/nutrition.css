@@ -17,6 +17,109 @@
 
 .calc-results { margin-top: 1.6rem; }
 
+.macro-mission {
+  margin-top: 1.4rem;
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.macro-mission-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+.macro-mission-head .eyebrow { font-size: 0.68rem; }
+.macro-mission h3 { margin: 0.2rem 0 0; }
+.macro-mission-head p {
+  max-width: 27rem;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: right;
+}
+.macro-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 3px);
+  overflow: hidden;
+}
+.macro-item {
+  display: grid;
+  gap: 0.22rem;
+  min-height: 94px;
+  padding: 1rem;
+  background: rgba(4, 20, 10, 0.35);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.macro-item:nth-child(3n) { border-right: 0; }
+.macro-item:nth-last-child(-n + 3) { border-bottom: 0; }
+.macro-value {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1;
+}
+@media (hover: hover) {
+  .macro-item:hover {
+    background: var(--bg-card-hover);
+    box-shadow: inset 0 0 0 1px rgba(34, 245, 94, 0.1);
+  }
+}
+.macro-label {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.macro-label small {
+  display: block;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+.macro-explainer {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+.macro-formula {
+  margin: 0;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.macro-formula-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem 1rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+.macro-formula-list strong { color: var(--text); }
+}
+@media (max-width: 620px) {
+  .macro-mission-head { align-items: start; flex-direction: column; }
+  .macro-mission-head p { text-align: left; }
+  .macro-grid { grid-template-columns: repeat(2, 1fr); }
+  .macro-item:nth-child(3n) { border-right: 1px solid var(--border); }
+  .macro-item:nth-child(2n) { border-right: 0; }
+  .macro-item:nth-last-child(-n + 3) { border-bottom: 1px solid var(--border); }
+  .macro-item:nth-last-child(-n + 2) { border-bottom: 0; }
+  .macro-formula-list { grid-template-columns: 1fr; }
+}
+
 .calc-note {
   margin: 1.2rem 0 0;
   color: var(--text-faint);

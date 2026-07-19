@@ -52,11 +52,27 @@
       // ~1.6 g protein per kg body weight, a solid default for training
       const protein = Math.round(values.weight * 1.6);
 
+      // FTP daily macro formula: body weight drives every target below.
+      const macroCalories = values.weight * 26;
+      const macroProtein = values.weight * 2;
+      const macroFat = macroCalories / 30;
+      const macroFibre = macroCalories * 0.014;
+      const macroCarbs = (macroCalories - (macroProtein * 4) - (macroFat * 9)) / 4;
+      const macroWater = values.weight / 30;
+
       document.getElementById('stat-bmr').textContent = Math.round(bmr).toLocaleString();
       document.getElementById('stat-target').textContent = target.toLocaleString();
       document.getElementById('stat-bmi').textContent = bmi.toFixed(1);
       document.getElementById('stat-protein').textContent = String(protein);
       document.getElementById('calc-results').hidden = false;
+
+      document.getElementById('macro-calories').textContent = Math.round(macroCalories).toLocaleString();
+      document.getElementById('macro-protein').textContent = Math.round(macroProtein).toLocaleString();
+      document.getElementById('macro-fat').textContent = macroFat.toFixed(1);
+      document.getElementById('macro-fibre').textContent = macroFibre.toFixed(1);
+      document.getElementById('macro-carbs').textContent = Math.round(macroCarbs).toLocaleString();
+      document.getElementById('macro-water').textContent = macroWater.toFixed(1);
+      document.getElementById('macro-mission').hidden = false;
     });
 
     // Clear the error state as soon as the value is corrected

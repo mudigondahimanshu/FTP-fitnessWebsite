@@ -127,6 +127,34 @@
             <div class="stat"><span class="num" id="stat-bmi">—</span><span class="label">BMI</span></div>
             <div class="stat"><span class="num" id="stat-protein">—</span><span class="label">Protein (g/day)</span></div>
           </div>
+          <section class="macro-mission" id="macro-mission" aria-labelledby="macro-mission-title" hidden>
+            <div class="macro-mission-head">
+              <div>
+                <span class="eyebrow">Your daily fuel plan</span>
+                <h3 id="macro-mission-title">Macro Mission</h3>
+              </div>
+              <p>Targets based on your body weight using the FTP formulas below.</p>
+            </div>
+            <div class="macro-grid">
+              <div class="macro-item"><span class="macro-value" id="macro-calories">—</span><span class="macro-label">Calories <small>kcal/day</small></span></div>
+              <div class="macro-item"><span class="macro-value" id="macro-protein">—</span><span class="macro-label">Protein <small>g/day</small></span></div>
+              <div class="macro-item"><span class="macro-value" id="macro-fat">—</span><span class="macro-label">Fat <small>g/day</small></span></div>
+              <div class="macro-item"><span class="macro-value" id="macro-fibre">—</span><span class="macro-label">Fiber <small>g/day</small></span></div>
+              <div class="macro-item"><span class="macro-value" id="macro-carbs">—</span><span class="macro-label">Carbs <small>g/day</small></span></div>
+              <div class="macro-item"><span class="macro-value" id="macro-water">—</span><span class="macro-label">Water <small>L/day</small></span></div>
+            </div>
+            <div class="macro-explainer">
+              <p class="macro-formula">How the targets are calculated</p>
+              <ul class="macro-formula-list">
+                <li><strong>Calories:</strong> body weight (kg) × 26</li>
+                <li><strong>Protein:</strong> body weight (kg) × 2</li>
+                <li><strong>Fat:</strong> calories ÷ 30</li>
+                <li><strong>Fiber:</strong> calories × 0.014</li>
+                <li><strong>Carbs:</strong> (calories − protein × 4 − fat × 9) ÷ 4</li>
+                <li><strong>Water:</strong> body weight (kg) ÷ 30</li>
+              </ul>
+            </div>
+          </section>
           <p class="calc-note">Always track the carbohydrates you take in to keep tabs on your progress — estimates only, not medical advice.</p>
         </div>
       </div>

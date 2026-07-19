@@ -304,11 +304,18 @@ h1, h2, h3, h4 {
   transition: border-color 0.22s, background-color 0.22s, box-shadow 0.22s, transform 0.22s var(--ease);
 }
 a.card { color: var(--text); display: block; cursor: pointer; }
-.card:hover, a.card:hover {
+@media (hover: hover) {
+  .card:hover, a.card:hover {
+    border-color: var(--border-bright);
+    background: var(--bg-card-hover);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(34, 245, 94, 0.08);
+    transform: translateY(-2px);
+  }
+}
+.card:focus-within,
+a.card:focus-visible {
   border-color: var(--border-bright);
-  background: var(--bg-card-hover);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(34, 245, 94, 0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 0 0 3px rgba(34, 245, 94, 0.16);
 }
 .card h3 { font-size: 1.4rem; }
 .card p { color: var(--text-muted); margin: 0; }
